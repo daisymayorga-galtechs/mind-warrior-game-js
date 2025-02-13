@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const scenes = [
         {
-            text: "You face the Shadow of Self-Doubt. It whispers: 'You are not good enough.'",
+            text: "You face the Shadow of Self-Doubt. It whispers: 'You are not good enough.' What do you do?",
             choices: [
                 { text: "Fight back with affirmations 💪", result: "The shadow shrinks! +10 Confidence!", points: 10 },
                 { text: "Ignore it and move forward 🚶‍♀️", result: "Doubt lingers... No points gained.", points: 0 },
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ]
         },
         {
-            text: "You reach the Bridge of Anxiety. It trembles beneath your feet.",
+            text: "You reach the Bridge of Anxiety. It trembles beneath your feet. What do you do?",
             choices: [
                 { text: "Take a deep breath and step forward 🌬️", result: "You gain resilience! +10 Strength!", points: 10 },
                 { text: "Turn back and avoid the bridge 🚫", result: "You missed out on growth. No points gained.", points: 0 },
@@ -28,13 +28,14 @@ document.addEventListener("DOMContentLoaded", function() {
             ]
         },
         {
-            text: "You stand before the Maze of Societal Expectations.",
+            text: "You stand before the Maze of Societal Expectations. It twists and turns with conflicting paths. What do you do?",
             choices: [
                 { text: "Embrace imperfection and keep going 🌟", result: "Self-compassion unlocked! +10 Love!", points: 10 },
                 { text: "Compare yourself to others 🤷‍♀️", result: "Self-doubt grows. No points gained.", points: 0 },
                 { text: "Challenge societal norms 🌈", result: "Empowerment unlocked! +10 Freedom!", points: 10 }
             ]
         }
+        
     ];
 
     startBtn.addEventListener("click", function() {
