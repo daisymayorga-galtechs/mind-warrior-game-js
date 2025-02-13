@@ -59,21 +59,33 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleChoice(choiceIndex) {
         resultText.innerText = scenes[currentScene].choices[choiceIndex].result;
         currentScene++;
-        
-        if (currentScene < scenes.length) {
-            setTimeout(() => {
+    
+        // Hide choices so only the result is visible
+        choicesDiv.style.display = "none";
+    
+        // Create a "Next" button
+        const nextButton = document.createElement("button");
+        nextButton.innerText = "Next ➡️";
+        nextButton.classList.add("next-btn");
+        document.body.appendChild(nextButton);
+    
+        // Move to the next scene when clicked
+        nextButton.addEventListener("click", function() {
+            nextButton.remove(); // Remove button after clicking
+    
+            if (currentScene < scenes.length) {
                 gameText.innerText = scenes[currentScene].text;
                 resultText.innerText = "";
+                choicesDiv.style.display = "block";
                 showChoices();
-            }, 2000);
-        } else {
-            setTimeout(() => {
+            } else {
                 gameText.innerText = `Congratulations, ${userName}! You have faced your shadows and emerged stronger! 🌟✨`;
                 choicesDiv.style.display = "none";
                 resultText.innerText = "Thanks for playing!";
-            }, 2000);
-        }
+            }
+        });
     }
+    
     
         function createStar() {
             const star = document.createElement("div");
