@@ -49,6 +49,20 @@ body::before {
     width: 300px;
     animation: float 5s infinite ease-in-out;
 }
+/* Adjust size & position for mobile screens */
+@media (max-width: 768px) {
+    .astronaut {
+        width: 100px; /* Smaller astronaut */
+        bottom: 10%;  /* Moves it slightly lower */
+    }
+}
+
+@media (max-width: 480px) {
+    .astronaut {
+        width: 80px;  /* Even smaller for very small screens */
+        bottom: 5%;   /* Keep it visible but out of the way */
+    }
+}
 
 /* Slow Floating Motion */
 @keyframes float {
