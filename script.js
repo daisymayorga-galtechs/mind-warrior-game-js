@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const choicesDiv = document.getElementById("choices");
     const choiceButtons = document.querySelectorAll(".choice-btn");
     const resultText = document.getElementById("result");
+    const starContainer = document.body;
 
     let userName = "";
     let currentScene = 0;
@@ -72,4 +73,31 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 2000);
         }
     }
+    
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("stars");
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            const size = Math.random() * 3 + 1; // Random size for different star effects
+    
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.animationDuration = `${Math.random() * 2 + 1}s`; // Different speeds for twinkling
+            
+            starContainer.appendChild(star);
+    
+            // Remove stars after some time to keep the page light
+            setTimeout(() => {
+                star.remove();
+            }, 5000);
+        }
+    
+        // Generate stars at intervals
+        setInterval(createStar, 100);
+    
+
 });
